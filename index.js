@@ -7,7 +7,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 const router = express.Router();
 
-PORT = 3001;
+const PORT = 3002;
 
 app.use(express.json());
 app.use(cors());
@@ -25,15 +25,13 @@ app.use("/auth", RecipeRoute);
 app.use("/auth", router);
 app.use("/auth", ForgotPassword);
 
-
-module.exports = router;
-
-router.get("/",(req, res) => {
+// Move this handler inside the app instance
+app.get("/", (req, res) => {
     res.send("Hello, Welcome to my Recipe Management App!");
-  });
+});
 
 if (config) {
-  app.listen(PORT, () => {
-    console.log(`Server Started on port ${PORT}`);
-  });
+    app.listen(PORT, () => {
+        console.log(`Server Started on port ${PORT}`);
+    });
 }
