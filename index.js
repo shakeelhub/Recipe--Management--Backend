@@ -30,7 +30,9 @@ router.get("/", verifyToken, Home.Home);
 
 module.exports = router;
 
-
+router.get("/", verifyToken, (req, res) => {
+    res.send("Hello, Welcome to my Recipe Management App!");
+  });
 
 if (config) {
   app.listen(PORT, () => {
