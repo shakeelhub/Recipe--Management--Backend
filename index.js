@@ -25,7 +25,6 @@ app.use("/auth", RecipeRoute);
 app.use("/auth", router);
 app.use("/auth", ForgotPassword);
 
-// Move this handler inside the app instance
 app.get("/", (req, res) => {
     res.send("Hello, Welcome to my Recipe Management App!");
 });
