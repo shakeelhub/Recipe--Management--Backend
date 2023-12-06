@@ -25,7 +25,6 @@ app.use("/auth", RecipeRoute);
 app.use("/auth", router);
 app.use("/auth", ForgotPassword);
 
-router.get("/", Home.Home);
 
 module.exports = router;
 
