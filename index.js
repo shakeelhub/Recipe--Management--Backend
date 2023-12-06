@@ -30,7 +30,7 @@ router.get("/", verifyToken, Home.Home);
 
 module.exports = router;
 
-router.get("/", verifyToken, (req, res) => {
+router.get("/",(req, res) => {
     res.send("Hello, Welcome to my Recipe Management App!");
   });
 
